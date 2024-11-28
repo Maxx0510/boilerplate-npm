@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Counter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        button {
+            font-size: 16px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Counter: <span id="counter">0</span></h1>
+    <button id="increase">Increase</button>
+    <button id="decrease">Decrease</button>
+    <button id="reset">Reset</button>
+
+    <script>
+        // JavaScript Code
+        // Step 1: Select the elements
+        const counterElement = document.getElementById("counter");
+        const increaseButton = document.getElementById("increase");
+        const decreaseButton = document.getElementById("decrease");
+        const resetButton = document.getElementById("reset");
+
+        // Step 2: Initialize the counter variable
+        let counter = 0;
+
+        // Step 3: Define functions to update the counter
+        function updateCounterDisplay() {
+            counterElement.textContent = counter;
+        }
+
+        function increaseCounter() {
+            counter++;
+            updateCounterDisplay();
+        }
+
+        function decreaseCounter() {
+            counter--;
+            updateCounterDisplay();
+        }
+
+        function resetCounter() {
+            counter = 0;
+            updateCounterDisplay();
+        }
+
+        // Step 4: Add event listeners to buttons
+        increaseButton.addEventListener("click", increaseCounter);
+        decreaseButton.addEventListener("click", decreaseCounter);
+        resetButton.addEventListener("click", resetCounter);
+    </script>
+</body>
+</html>
